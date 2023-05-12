@@ -3,7 +3,7 @@
 {
     --pale-blue:hsl(225,100%,94%);
     --bright-blue:hsl(245,75%,52%);
-    -very-pale-blue:hsl(225, 100%, 98%);
+    --paledim-blue:hsl(225, 100%, 98%);
     --desaturated-blue:hsl(224, 23%, 55%);
     --dark-blue:hsl(223, 47%, 23%);
 }
@@ -12,8 +12,167 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body
+{        
+    font-family: "Red Hat Display", sans-serif;
+    height: 100%;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-color: hsla(225,100%,94%,0.9);
+    background-image: url(images/pattern-background-desktop.svg);
+
+
+}
+.container
 {
-    font-size: 16px;
-    font-family: 'Red Hat Display', sans-serif;
+    height: 100%;
+    max-width: 450px;
+    margin: 80px auto;
+    background-color: var(--paledim-blue);
+    box-shadow: 0 15px 25px 0 hsla(245, 75%, 52%, .11);
+    border-radius: 19px;
+}
+
+.container .top-image img
+{
+
+    border-radius: 20px 20px 0 0;
+    object-fit: contain;
+}
+
+.container .content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px;
+    text-align: center;
+}
+
+.content .content-heading
+{
+    margin-bottom: 15px;
+    font-weight: 900;
+    font-size: 1.8rem;
+    opacity: 0.7;
+}
+
+.content .content-text
+{
+    font-size: 1.1rem;
+    opacity: 0.4;
+}
+
+.container .card 
+{
+    background-color: hsla(225, 100%, 94%,0.4);
+    width: 80%;
+    margin: auto;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+.card .card-image
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 70px;
+}
+.card .card-image img
+{
+    margin-right: 20px;
+}
+.card-plan h3
+{
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+.card-plan p
+{
+    opacity: 0.5;
+}
+.card a
+{
+    color: var(--bright-blue);
+    font-weight: 700;
+}
+.card a:hover
+{
+    cursor: pointer;
+}
+
+.buttons
+{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 35px 40px;
+}
+.buttons button
+{
+    margin-bottom: 20px;
+}
+.buttons button:hover
+{cursor: pointer;}
+.buttons .payment-btn
+{
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 10px;    
+    background-color: var(--bright-blue);
+    color: rgba(255, 255, 255,0.9);
+    font-size: 1rem;
+    box-shadow: 0 15px 20px 0 hsla(245, 75%, 52%, .25);
+    opacity: 1;
+    font-weight: bold;
+}
+.buttons .payment-btn:hover
+{
+    opacity: 0.7;
+}
+.buttons .cancel-btn
+{
+    width: 100%;
+    height: 48px;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+@media only screen and (max-width:445px)
+{
+    body 
+    {
+        padding: 20px;
+    }
+    .container
+    {
+        width: 100%;
+        max-width: 500px;
+    }
+    .container .top-image
+    {
+    max-width: 100%;
+
+    }
+.container .top-image img
+{
+    width: 100%;
+}
+.container .card 
+{
+    width: 92%;
+}
 }
